@@ -43,11 +43,6 @@ class NimBLELibraryWrapper: public IBLELibraryWrapper {
      * @note To allow the client, e.g. MyAmbience app, to discover a change in
      * the provided services switch Bluetooth off and then on again on your
      * client device.
-     *
-     * @param enableWifiSettings if true, wifi settings service will be
-     * initialized
-     * @param enableBatteryService if true, battery level service will be
-     * initilized
      */
     NimBLELibraryWrapper();
     NimBLELibraryWrapper(const NimBLELibraryWrapper& other) = delete;
@@ -60,7 +55,7 @@ class NimBLELibraryWrapper: public IBLELibraryWrapper {
                               const char* characteristicUuid,
                               Permission permission) override;
     bool startService(const char* uuid) override;
-    bool getConneted();
+    bool getConnected();
     void setAdvertisingData(const std::string& data) override;
     void startAdvertising() override;
     void stopAdvertising() override;
